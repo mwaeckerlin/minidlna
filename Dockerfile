@@ -2,12 +2,13 @@
 FROM ubuntu
 MAINTAINER mwaeckerlin
 
-env FRIENDLY_NAME "minidlna@docker"
-env MODEL_NAME "minidlna"
-env MEDIA_DIR "/data"
-env ROOT_CONTAINER "B"
-env OPTIONS "-R -v"
-env ALBUM_ART_NAMES "Cover.jpg/cover.jpg/AlbumArtSmall.jpg/albumartsmall.jpg/AlbumArt.jpg/albumart.jpg/Album.jpg/album.jpg/Folder.jpg/folder.jpg/Thumb.jpg/thumb.jpg"
+ENV FRIENDLY_NAME "minidlna@docker"
+ENV MODEL_NAME "minidlna"
+ENV MEDIA_DIR "/data"
+ENV ROOT_CONTAINER "B"
+ENV OPTIONS "-R -v"
+ENV ALBUM_ART_NAMES "Cover.jpg/cover.jpg/AlbumArtSmall.jpg/albumartsmall.jpg/AlbumArt.jpg/albumart.jpg/Album.jpg/album.jpg/Folder.jpg/folder.jpg/Thumb.jpg/thumb.jpg"
+ENV LANG "en_US.UTF-8"
 
 RUN apt-get update
 RUN apt-get install -y minidlna
