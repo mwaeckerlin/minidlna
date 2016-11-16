@@ -2,7 +2,9 @@
 
 if ! test -f /config/minidlna.conf; then
     cat > /config/minidlna.conf <<EOF
-media_dir=${MEDIA_DIR}
+$(for d in  ${MEDIA_DIR}; do
+    echo "media_dir=${d}"
+  done)
 port=8200
 serial=$(tr -dc '0-9' < /dev/urandom | fold -w 15 | head -n 1)
 album_art_names=${ALBUM_ART_NAMES}
